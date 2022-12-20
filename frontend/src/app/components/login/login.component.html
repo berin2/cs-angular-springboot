@@ -1,0 +1,27 @@
+<app-app-container>
+  <section class="rounded col-lg-3 col-md-5 col-sm-12 d-flex flex-column align-items-center justify-content-between border shadow app-centered-form py-1">
+    <section class="text-start w-100">
+      <h1 class="app-color-primary">Login</h1>
+      <h1 class="bi bi-box-arrow-in-left app-color-primary"></h1>
+    </section>
+    <p class="text-center text-secondary p-2 border-bottom app-bg-secondary">
+      Enter your username and password to login. If you don't have an account but would like to register,
+      you can do so <a>here</a>.
+    </p>
+
+    <mat-form-field  class="w-75" appearance="fill">
+      <mat-label>Username <i class="bi bi-person"></i></mat-label>
+      <input [(ngModel)]="username"  matInput>
+      <mat-hint>Enter your registered username.</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="w-75" appearance="fill">
+      <mat-label>Password <i class="bi bi-lock"></i></mat-label>
+      <input type="password" [(ngModel)]="password"  matInput>
+      <mat-hint>Enter your password.</mat-hint>
+    </mat-form-field>
+
+    <section>
+      <input class="btn btn-outline-danger"  value="Login">
+    </section>
+  </section>
+</app-app-container>

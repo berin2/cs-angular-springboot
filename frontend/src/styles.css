@@ -1,5 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+
+.app-centered-form{
+  min-height: 75vh !important;
+}
+
+.app-color-primary {
+  color: #240469;
+}
+.app-bg-secondary{
+  background-color: #d9d9d9 !important;
+}
+
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color:#4d4c4c; }
