@@ -1,0 +1,65 @@
+<mat-accordion class="container-fluid">
+  <mat-expansion-panel (opened)="collapse = true"
+                       (closed)="collapse = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title class="">
+        <h2 class="app-text fw-lighter">
+          <i class="bi bi-diagram-3-fill text-warning"></i>
+          {{project.projectName.toUpperCase()}}</h2>
+      </mat-panel-title>
+      <mat-panel-description class=" fw-lighter text-secondary text-truncate">
+        {{project.projectDescription}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <section *ngIf="!renderUpdate;else update" class="container-fluid ">
+      <section class="row">
+        <h2 class="text-secondary fw-lighter">
+          Description
+        </h2>
+        <p>
+          {{project.projectDescription}}
+        </p>
+      </section>
+      <section class="row">
+        <div class="col-md-3 col-6 form-group">
+          <label [for]="project.id" class="form-text">
+            <i class="bi bi-calendar-event"></i>
+            Start Date
+          </label>
+         <p  class="fw-lighter" [id]="project.id">{{project.startDate}}</p>
+        </div>
+        <div class="col-md-3 col-6 form-group">
+          <label [for]="project.id" class="form-text">
+            <i class="bi bi-calendar-event"></i>
+            End Date
+          </label>
+          <p  class="fw-lighter" [id]="project.id">{{project.endDate}}</p>
+        </div>
+        <div class="col-md-3 col-6 form-group">
+          <label class="form-text">Status</label>
+          <p class="fw-lighter">{{project.cancelled?"Cancelled":"Active"}}</p>
+        </div>
+        <div class="col-md-3 col-6 form-group">
+          <label class="form-text">Cost</label>
+          <p class="fw-lighter">{{project.cost}}</p>
+        </div>
+      </section>
+      <section class="app-bg-secondary d-flex flex-row justify-content-end rounded my-1">
+        <div class="m-2">
+          <input type="button" class="btn btn-warning fw-lighter " value="Delete" />
+        </div>
+        <div class="m-2">
+          <input type="button" class="btn btn-secondary fw-lighter" value="Update" (click)="toggleUpdate(true)" />
+        </div>
+      </section>
+    </section>
+    <ng-template #update>
+      <app-project-update-create [isUpdateForm]="false">
+        <input type="button" class="btn btn-secondary" value="View Project" (click)="toggleUpdate(false)"/>
+      </app-project-update-create>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-accordion>
+
+

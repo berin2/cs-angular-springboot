@@ -1,14 +1,14 @@
 <app-app-container>
   <section class="rounded col-lg-3 col-md-5 col-sm-12 d-flex flex-column align-items-center justify-content-between border shadow app-centered-form py-1">
-    <section class="text-start w-100">
-      <h1 class="app-color-primary">Register</h1>
-      <h1 class="bi bi-box-arrow-in-left app-color-primary"></h1>
+    <section class="d-flex flex-row justify-content-between w-100 border-bottom">
+      <h3 class="app-color-primary app-text fw-lighter">Register</h3>
+      <h3 class="bi bi-box-arrow-in-left app-color-primary"></h3>
     </section>
     <p class="text-center text-secondary p-2 border-bottom app-bg-secondary">
-      Enter your username and password to login. If you don't have an account but would like to register,
-      you can do so <a>here</a>.
+      Enter your username,password, and optional email to register. If you have an account,
+      you can <a href="/login">login here</a>.
     </p>
-
+    <img src="/assets/pattern.png" class="app-brand-sm"/>
     <mat-form-field  class="w-75" appearance="fill">
       <mat-label>Username <i class="bi bi-person"></i></mat-label>
       <input [(ngModel)]="username"  matInput>
@@ -31,7 +31,7 @@
     </mat-form-field>
 
     <section>
-      <input class="btn btn-outline-danger"  value="Login">
+      <input class="btn btn-outline-warning"  value="Login">
     </section>
   </section>
 </app-app-container>

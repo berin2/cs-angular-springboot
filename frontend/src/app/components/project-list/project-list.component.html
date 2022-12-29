@@ -1,0 +1,8 @@
+<app-app-container>
+  <section *ngIf="this.error;else noError">
+
+  </section>
+  <ng-template #noError>
+    <app-error-fetch></app-error-fetch>
+  </ng-template>
+</app-app-container>

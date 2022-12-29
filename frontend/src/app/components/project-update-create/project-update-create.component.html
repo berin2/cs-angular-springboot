@@ -1,0 +1,44 @@
+  <section class="row">
+  <mat-form-field  class="col-3" appearance="fill">
+    <mat-label>Name <i class="bi bi-person"></i></mat-label>
+    <input [(ngModel)]="project.projectName"  matInput>
+    <mat-hint>Enter the project name .</mat-hint>
+  </mat-form-field>
+  <mat-form-field  class="col-6" appearance="fill">
+    <mat-label>Description <i class="bi bi-person"></i></mat-label>
+    <textarea [(ngModel)]="project.projectDescription"  matInput></textarea>
+    <mat-hint>Enter the project description.</mat-hint>
+  </mat-form-field>
+    <mat-form-field  class="col-6" appearance="fill">
+      <mat-label>Cost <i class="bi bi-person"></i></mat-label>
+      <input type="number" min="1.00" step="0.01" [(ngModel)]="project.cost"  matInput/>
+      <mat-hint>Enter the project estimated cost.</mat-hint>
+    </mat-form-field>
+    <mat-form-field  class="col-6" appearance="fill">
+      <mat-label>Description <i class="bi bi-person"></i></mat-label>
+      <textarea [(ngModel)]="project.projectDescription"  matInput></textarea>
+      <mat-hint>Enter the project description.</mat-hint>
+    </mat-form-field>
+    <mat-form-field  class="col-3" appearance="fill">
+      <mat-label>Choose a start date</mat-label>
+      <input matInput [matDatepicker]="pickerStart">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+      <mat-datepicker #pickerStart></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field  class="col-3" appearance="fill">
+      <mat-label>Choose a end date</mat-label>
+      <input matInput [matDatepicker]="pickerEnd">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+      <mat-datepicker #pickerEnd></mat-datepicker>
+    </mat-form-field>
+    <section class="col-3 d-flex justify-content-center align-items-center" *ngIf="!isUpdateForm">
+      <mat-checkbox >Suspend Project</mat-checkbox>
+    </section>
+    <section class="col-12 d-flex flex-row justify-content-end align-items-center app-bg-secondary rounded p-2">
+      <ng-content></ng-content>
+      <input type="button" class="btn btn-warning fw-lighter" value="Update Project" (click)="randomId()"/>
+    </section>
+</section>
+

@@ -1,0 +1,16 @@
+.home-icon{
+  bottom: 10px;
+  cursor: pointer;
+  border: 1pxs solid gray;
+  height: 70px;
+  position: fixed;
+  right: 10px;
+  width: 70px;
+}
+
+.home-icon:hover{
+  background-color: lightgrey;
+  color: white;
+  height: 75px;
+  width: 75px;
+}

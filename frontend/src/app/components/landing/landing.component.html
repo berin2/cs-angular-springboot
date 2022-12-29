@@ -1,0 +1,33 @@
+<section class="landing d-flex flex-column justify-content-around align-items-center px-2">
+  <section class="">
+    <h1 class="title">
+      Dynatrace
+      <i class="bi bi-kanban-fill text-warning"></i>
+    </h1>
+  </section>
+  <img src="assets/pattern.png"/>
+  <p class="blurb app-text py-1">
+    The world's leading project management provider.
+    Fast. Productive Easy to use. And Free.
+    What's not to love! Try it today!
+  </p>
+  <section class="row ">
+    <div class="col-6 d-flex flex-column justify-content-between align-items-center ">
+      <h2 class="bi bi-person-badge text-secondary"></h2>
+      <h2 class="fw-lighter">
+        Have an account?
+      </h2>
+      <p>We got you covered.</p>
+      <input type="button" class=" btn btn-warning text-white rounded" value="Login" (click)="navToLogin()"/>
+    </div>
+    <div class="col-6  d-flex flex-column justify-content-between align-items-center">
+      <h2 class="bi bi-box-arrow-in-right text-secondary"></h2>
+      <h2 class="fw-lighter">
+        Want to sign up?
+      </h2>
+      <p>For the world's best project management software?</p>
+      <input type="button" class="btn btn-secondary rounded" value="Sign Up" (click)="navToRegister()"/>
+    </div>
+  </section>
+
+</section>

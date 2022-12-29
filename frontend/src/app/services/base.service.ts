@@ -9,4 +9,7 @@ export abstract class BaseService {
   public static LOGIN: string = `${BaseService.NO_AUTH_ROUTES}/login`;
   public static REGISTER: string = `${BaseService.NO_AUTH_ROUTES}/register`;
 
+  public static LOGOUT: string = `${BaseService.AUTH_ROUTES}/logout`;
+  public static PROJECTS: string = `${BaseService.AUTH_ROUTES}/projects`;
+
 }
