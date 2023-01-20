@@ -1,8 +1,8 @@
 aws:
   utils:
     region: us-west-1
-    access-key-id: +/2N23nXn0qQFR2UNNUkk4ezrTGH5ZqleuC8525/
-    access-key: AKIAV3IW64XUSL2OD3NZ
+    access-key-id: PLACEHOLDER
+    access-key: PLACEHOLDER
   s3:
     bucket-name: puvs-89127fdgkh2-dev-bucket
 
