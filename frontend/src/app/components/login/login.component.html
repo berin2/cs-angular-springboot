@@ -6,7 +6,7 @@
     </section>
     <p class="text-center text-secondary p-2 border-bottom app-bg-secondary">
       Enter your username and password to login. If you don't have an account but would like to register,
-      you can <a href="/register">register here</a>.
+      you can <a routerLink="/register">register here</a>.
     </p>
     <img src="/assets/pattern.png" class="app-brand-sm"/>
 
@@ -21,7 +21,7 @@
       <mat-hint>Enter your password.</mat-hint>
     </mat-form-field>
     <section>
-      <input class="btn btn-outline-warning"  value="Login">
+      <input class="btn btn-outline-warning" value="Login" (click)="login()" />
     </section>
   </section>
 </app-app-container>

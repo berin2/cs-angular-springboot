@@ -6,6 +6,9 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 const IMPORTS_EXPORTS:any [] = [
@@ -15,7 +18,10 @@ const IMPORTS_EXPORTS:any [] = [
   MatNativeDateModule,
   MatInputModule,
   MatExpansionModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatProgressSpinnerModule
 ];
 @NgModule({
   imports:[IMPORTS_EXPORTS],

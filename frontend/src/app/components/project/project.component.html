@@ -1,17 +1,14 @@
-<mat-accordion class="container-fluid">
+<mat-accordion class="col-12">
   <mat-expansion-panel (opened)="collapse = true"
                        (closed)="collapse = false">
     <mat-expansion-panel-header>
-      <mat-panel-title class="">
-        <h2 class="app-text fw-lighter">
-          <i class="bi bi-diagram-3-fill text-warning"></i>
-          {{project.projectName.toUpperCase()}}</h2>
+      <mat-panel-title class="d-flex flex-row  align-items-center justify-content-start">
+        <h3 class="bi bi-diagram-3-fill text-warning px-1"></h3>
+        <p class="app-text fw-lighter text-truncate">
+          {{project.projectName.toLowerCase()}}
+        </p>
       </mat-panel-title>
-      <mat-panel-description class=" fw-lighter text-secondary text-truncate">
-        {{project.projectDescription}}
-      </mat-panel-description>
     </mat-expansion-panel-header>
-
     <section *ngIf="!renderUpdate;else update" class="container-fluid ">
       <section class="row">
         <h2 class="text-secondary fw-lighter">
@@ -44,10 +41,24 @@
           <label class="form-text">Cost</label>
           <p class="fw-lighter">{{project.cost}}</p>
         </div>
+        <div class="col-12">
+          <h5 class="fw-lighter px-2">Supporting PDF documentation</h5>
+          <section *ngIf="project.byteData !== null; else noPdfFound">
+            <p>
+              We found a project PDF.Click below to download and it's all yours!
+            </p>
+            <input type="button" value="download" class="btn btn-outline-secondary" (click)="download()"/>
+          </section>
+          <ng-template #noPdfFound>
+            <section class="text-secondary" >
+              We didn't find any supporting PDF documentation for this project. You can upload one while updating your project.
+            </section>
+          </ng-template>
+        </div>
       </section>
       <section class="app-bg-secondary d-flex flex-row justify-content-end rounded my-1">
         <div class="m-2">
-          <input type="button" class="btn btn-warning fw-lighter " value="Delete" />
+          <input type="button" class="btn btn-warning fw-lighter " value="Delete" (click)="deleteItem()" />
         </div>
         <div class="m-2">
           <input type="button" class="btn btn-secondary fw-lighter" value="Update" (click)="toggleUpdate(true)" />
@@ -55,7 +66,7 @@
       </section>
     </section>
     <ng-template #update>
-      <app-project-update-create [isUpdateForm]="false">
+      <app-project-update-create  [project]="project" [isUpdateForm]="true">
         <input type="button" class="btn btn-secondary" value="View Project" (click)="toggleUpdate(false)"/>
       </app-project-update-create>
     </ng-template>

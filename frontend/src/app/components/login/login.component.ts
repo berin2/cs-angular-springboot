@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {AuthService} from "../../services/auth-service/auth-service";
 import {Observable} from "rxjs";
 import {LoginDto} from "../../dtos/login-dto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -13,12 +14,14 @@ export class LoginComponent {
   public password:string = "";
   public loginFailed: boolean = false;
 
-  constructor(private authService:AuthService) {}
+  constructor(private authService:AuthService, private router: Router) {}
 
-  public login(): void
+  public async login():Promise<void>
   {
-    this.authService
-      .login(this.username,this.password)
-      .subscribe((success:boolean) => this.loginFailed = !success);
+    let retval: boolean = await this.authService
+      .login(this.username,this.password);
+    if(retval === true)
+        this.router.navigateByUrl("");
+
   }
 }

@@ -1,5 +1,13 @@
+aws:
+  utils:
+    region: us-west-1
+    access-key-id: +/2N23nXn0qQFR2UNNUkk4ezrTGH5ZqleuC8525/
+    access-key: AKIAV3IW64XUSL2OD3NZ
+  s3:
+    bucket-name: puvs-89127fdgkh2-dev-bucket
+
 server:
-  port: 9217
+  port: 9211
 spring:
   application:
     name: backend
@@ -12,4 +20,9 @@ spring:
     hibernate:
       ddl-auto: create-drop
     database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-consoles
 

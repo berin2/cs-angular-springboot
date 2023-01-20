@@ -11,9 +11,23 @@ export class ProjectDto {
     startDate: number,
     endDate: number,
     public cost: number,
-    public cancelled: boolean
+    public cancelled: boolean,
+    public byteData: string
   ) {
     this.startDate = new Date(startDate);
     this.endDate = new Date(endDate);
-  }
+    }
+
+    public toApiObject(): object {
+      return {
+        id:this.id,
+        projectName:this.projectName,
+        projectDescription:this.projectDescription,
+        startDate: this.startDate.getTime(),
+        endDate: this.endDate.getTime(),
+        cost: this.cost,
+        cancelled: this.cancelled,
+        byteData:this.byteData
+      }
+    }
 }

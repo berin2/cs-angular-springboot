@@ -6,17 +6,24 @@ import {LandingComponent} from "../components/landing/landing.component";
 import {NotFoundComponent} from "../components/not-found/not-found.component";
 import {ProjectComponent} from "../components/project/project.component";
 import {AuthGuard} from "../guards/auth.guard";
+import {NoAuthGuard} from "../guards/no-auth.guard";
+import {IndexComponent} from "../components/index/index.component";
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent,canActivate: [AuthGuard]},
-  {path:"register",component: RegisterComponent,canActivate: [AuthGuard]},
-  {path:"", component: LandingComponent,canActivate: [AuthGuard]},
-  {path: "test", component:ProjectComponent,},
+  {path:"login",component:LoginComponent,canActivate: [NoAuthGuard]},
+  {path:"register",component: RegisterComponent,canActivate: [NoAuthGuard]},
+  {path:"", component: IndexComponent},
+  {path: "test", component:ProjectComponent, canActivate:[AuthGuard]},
   {path:"**", component: NotFoundComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(
+      routes,
+      {onSameUrlNavigation: "reload"}
+    ),
+  ],
   providers: [Router],
   exports: [RouterModule]
 })

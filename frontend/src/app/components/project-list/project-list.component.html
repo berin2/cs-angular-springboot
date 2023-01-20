@@ -1,6 +1,29 @@
+<section>
+  Error list component
+</section>
 <app-app-container>
-  <section *ngIf="this.error;else noError">
+  <section *ngIf="!this.error;else noError" class="project-display bg-white rounded py-2 ">
+    <section class="col-12 w-100 d-flex flex-row  align-items-center justify-content-between rounded p-2">
+      <h3 class="fw-light">Project List</h3>
+      <mat-icon class="fw-light">preview</mat-icon>
+    </section>
+    <section *ngIf="loading;else projects " class="d-flex flex-row justify-content-center align-items-center">
+      <span>Loading data...</span>
+    <mat-spinner [diameter]="40" >
+    </mat-spinner>
+    </section>
 
+    <ng-template #projects>
+      <section *ngIf="!projectsExist; else projectsList;">
+        <h2 class="bg-white fw-lighter">Wow, so empty!</h2>
+        <p class="fw-lighter">
+          A  list of your loadedProjects will render here, but seems as if you dont have any at the moment.;)
+        </p>
+      </section>
+      <ng-template #projectsList>
+        <app-project  *ngFor="let projectElement of this.loadedProjects" [project]="projectElement"  (deleteEvent)="this.delete($event)"></app-project>
+      </ng-template>
+    </ng-template>
   </section>
   <ng-template #noError>
     <app-error-fetch></app-error-fetch>

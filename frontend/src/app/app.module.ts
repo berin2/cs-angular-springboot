@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {NgModule, OnInit} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -20,6 +20,8 @@ import { ProjectUpdateCreateComponent } from './components/project-update-create
 import { ErrorFetchComponent } from './components/error-fetch/error-fetch.component';
 import { ProjectComponent } from './components/project/project.component';
 import BootstrapModule from "./modules/bootstrap.module";
+import { IndexComponent } from './components/index/index.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import BootstrapModule from "./modules/bootstrap.module";
     ProjectUpdateCreateComponent,
     ErrorFetchComponent,
     ProjectComponent,
-    ProjectUpdateCreateComponent
+    ProjectUpdateCreateComponent,
+    IndexComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -49,4 +53,4 @@ import BootstrapModule from "./modules/bootstrap.module";
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule{ }

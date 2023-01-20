@@ -1,0 +1,10 @@
+<section *ngIf="dataFetched; else fetchCompleted;">
+  <h2>Hang tight, getting it all ready...</h2>
+  <mat-spinner></mat-spinner>
+</section>
+<ng-template #fetchCompleted>
+  <app-landing  *ngIf="!service.isAuthenticated(); else authenticated"></app-landing>
+  <ng-template #authenticated>
+    <app-dashboard></app-dashboard>
+  </ng-template>
+</ng-template>

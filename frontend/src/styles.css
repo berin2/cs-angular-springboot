@@ -6,6 +6,11 @@
   height: 90px;
   width: auto;
 }
+
+.app-brand-xs {
+  height: 45px;
+  width: auto;
+}
 .app-centered-form{
   min-height: 75vh !important;
 }

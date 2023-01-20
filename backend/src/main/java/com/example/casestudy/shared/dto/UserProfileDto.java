@@ -1,13 +1,12 @@
-package com.example.casestudy.permitall.dto;
+package com.example.casestudy.shared.dto;
 
+import com.example.casestudy.security.entity.ApplicationDetails;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserProfileDto {
     public String username;
 
-    public UserProfileDto(UserDetails details)
-    {
-        this.username = details.getUsername();
-    }
+    public UserProfileDto(ApplicationDetails details)
+    { this.username = details.getUsername();}
 
 }

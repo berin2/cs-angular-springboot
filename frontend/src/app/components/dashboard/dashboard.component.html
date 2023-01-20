@@ -1,0 +1,32 @@
+<mat-toolbar  class="bg-white shadow fixed-top">
+    <mat-toolbar-row class="d-flex flex-row justify-content-between">
+      <section class="d-flex flex-row justify-content-between align-items-center border-end px-2">
+          <img src="assets/pattern.png"  class="app-brand-xs" alt="Dyna trace logo"/>
+          <h5 class="app-text fw-light">Dyna<span class="text-warning">trace</span></h5>
+      </section>
+      <section class="align-self-start">
+        <button mat-icon-button  (click)="setRenderList(true)">
+          <mat-icon>
+            format_list_bulleted
+          </mat-icon>
+        </button>
+        <button mat-icon-button (click)="setRenderList(false)">
+          <mat-icon>
+            create
+          </mat-icon>
+        </button>
+      </section>
+      <button class="btn btn-warning" aria-label="Example icon-button with menu icon" (click)="this.logout()">
+        Logout
+      </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<section *ngIf="!renderList; else list" >
+  <app-app-container>
+    <app-project-update-create [isUpdateForm]="false" ></app-project-update-create>
+  </app-app-container>
+</section>
+<ng-template #list>
+  <app-project-list></app-project-list>
+</ng-template>
+

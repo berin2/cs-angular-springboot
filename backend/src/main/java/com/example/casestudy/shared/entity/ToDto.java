@@ -1,5 +1,5 @@
 package com.example.casestudy.shared.entity;
 
-public interface IDto<DTO> {
+public interface ToDto<DTO> {
     DTO toDTO();
 }
